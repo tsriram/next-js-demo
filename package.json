@@ -1,0 +1,20 @@
+{
+  "name": "github-followers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -p 5000",
+    "build": "next build",
+    "start": "next start -p 5000"
+  },
+  "keywords": [],
+  "author": "Sriram Thiagarajan",
+  "license": "ISC",
+  "dependencies": {
+    "chakra-ui": "^0.3.9",
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
