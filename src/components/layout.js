@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export function Layout({ children }) {
   return (
-    <div className="lg:container lg:mx-auto p-8 bg-gray-800">
+    <div className="p-8 bg-gray-800 min-h-screen min-w-screen text-white">
       <Head>
         <title>GitHub Followers</title>
       </Head>

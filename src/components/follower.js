@@ -1,6 +1,6 @@
 export function FollowerCard({ follower }) {
   return (
-    <div className="bg-white max-w-sm rounded shadow-lg flex flex-col items-center p-8 w-250 bg-gray-600">
+    <div className="max-w-sm rounded shadow-lg flex flex-col items-center p-8 w-250 bg-gray-600">
       <img
         className="h-16 w-16 md:h-24 md:w-24 rounded-full mx-auto"
         src={follower.avatar_url}

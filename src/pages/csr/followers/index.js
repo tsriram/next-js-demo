@@ -1,7 +1,7 @@
-import { FollowerList } from "../components/follower-list";
-import { Spinner } from "../components/spinner";
+import { FollowerList } from "@/components/follower-list";
+import { Spinner } from "@/components/spinner";
 import { useQuery } from "react-query";
-import { getFollowers } from "../api";
+import { getFollowers } from "src/api";
 
 export default function Followers() {
   const { data, isLoading, error } = useQuery("followers", getFollowers);
