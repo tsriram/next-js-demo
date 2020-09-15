@@ -14,7 +14,7 @@ export function FollowerCard({ follower, renderType }) {
             alt={follower.login}
           />
           <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2 text-white">
+            <div className="font-bold text-xl mb-2 text-white truncate">
               {follower.login}
             </div>
           </div>
