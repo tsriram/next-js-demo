@@ -1,11 +1,28 @@
 import { FollowerList } from "@/components/follower-list";
 import { Spinner } from "@/components/spinner";
-import { useQuery } from "react-query";
+import { useEffect, useState } from "react";
 import { getFollowers } from "src/api";
 
 export default function Followers() {
-  const { data, isLoading, error } = useQuery("followers", getFollowers);
-  if (isLoading) {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(undefined);
+  const [followers, setFollowers] = useState([]);
+
+  async function fetchFollowers() {
+    try {
+      const data = await getFollowers();
+      setFollowers(data);
+      setLoading(false);
+    } catch (error) {
+      setError(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchFollowers();
+  }, []);
+
+  if (loading) {
     return <Spinner />;
   }
 
@@ -13,5 +30,5 @@ export default function Followers() {
     return <h1>Error loading followers: {error?.message || error}</h1>;
   }
 
-  return <FollowerList followers={data} />;
+  return <FollowerList followers={followers} />;
 }
