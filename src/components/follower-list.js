@@ -1,7 +1,7 @@
 import { FollowerCard } from "./Follower";
 import Link from "next/link";
 
-export function FollowerList({ followers }) {
+export function FollowerList({ followers, renderType }) {
   return (
     <>
       <div className="lg:container lg:mx-auto my-6">
@@ -14,7 +14,13 @@ export function FollowerList({ followers }) {
       </div>
       <div className="lg:container lg:mx-auto grid grid-cols-4 gap-4">
         {followers.map((follower) => {
-          return <FollowerCard follower={follower} key={follower.id} />;
+          return (
+            <FollowerCard
+              follower={follower}
+              key={follower.id}
+              renderType={renderType}
+            />
+          );
         })}
       </div>
     </>

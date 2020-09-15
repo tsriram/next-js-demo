@@ -1,17 +1,19 @@
-import { FollowerList } from "@/components/follower-list";
+import { UserDetails } from "@/components/user-details";
 import { Spinner } from "@/components/spinner";
 import { useEffect, useState } from "react";
-import { getFollowers } from "src/api";
+import { getUserDetails } from "src/api";
+import { useRouter } from "next/router";
 
-export default function Followers() {
+export default function FollowerDetails() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(undefined);
-  const [followers, setFollowers] = useState([]);
+  const [user, setUser] = useState(undefined);
+  const router = useRouter();
 
-  async function fetchFollowers() {
+  async function fetchUserDetails() {
     try {
-      const data = await getFollowers();
-      setFollowers(data);
+      const data = await getUserDetails(router.query.login);
+      setUser(data);
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -19,7 +21,7 @@ export default function Followers() {
   }
 
   useEffect(() => {
-    fetchFollowers();
+    fetchUserDetails();
   }, []);
 
   if (loading) {
@@ -30,5 +32,5 @@ export default function Followers() {
     return <h1>Error loading followers: {error?.message || error}</h1>;
   }
 
-  return <FollowerList followers={followers} renderType="csr" />;
+  return <UserDetails user={user} />;
 }

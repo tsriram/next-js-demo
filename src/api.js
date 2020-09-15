@@ -4,3 +4,7 @@ const user = process.env.NEXT_PUBLIC_GH_USER;
 export async function getFollowers() {
   return fetcher(`https://api.github.com/users/${user}/followers`);
 }
+
+export async function getUserDetails(login) {
+  return fetcher(`https://api.github.com/users/${login}`);
+}
