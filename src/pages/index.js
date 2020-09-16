@@ -1,24 +1,32 @@
 import NextLink from "next/link";
 
+function LinkWrapper({ children }) {
+  return (
+    <div className="max-w-sm rounded shadow-lg flex flex-col items-center p-8 w-250 bg-gray-600 mb-8 cursor-pointer w-64">
+      {children}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col items-center">
       <NextLink href="/csr/followers" passHref>
-        <div className="max-w-sm rounded shadow-lg flex flex-col items-center p-8 w-250 bg-gray-600 mb-2 cursor-pointer">
-          <a>Client Side Rendered</a>
-        </div>
+        <a>
+          <LinkWrapper>Client Side Rendered</LinkWrapper>
+        </a>
       </NextLink>
 
       <NextLink href="/ssg/followers" passHref>
-        <div className="max-w-sm rounded shadow-lg flex flex-col items-center p-8 w-250 bg-gray-600 mb-2 cursor-pointer">
-          <a>Statically Generated</a>
-        </div>
+        <a>
+          <LinkWrapper>Statically Generated</LinkWrapper>
+        </a>
       </NextLink>
 
       <NextLink href="/ssr/followers" passHref>
-        <div className="max-w-sm rounded shadow-lg flex flex-col items-center p-8 w-250 bg-gray-600 mb-2 cursor-pointer">
-          <a>Server Side Rendered</a>
-        </div>
+        <a>
+          <LinkWrapper>Server Side Rendered</LinkWrapper>
+        </a>
       </NextLink>
     </div>
   );
