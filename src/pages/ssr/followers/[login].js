@@ -1,4 +1,5 @@
 import { UserDetails } from "@/components/user-details";
+import { getAuthHeaders } from "src/util";
 import { getUserDetails } from "src/api";
 
 export default function FollowerDetails({ user }) {
