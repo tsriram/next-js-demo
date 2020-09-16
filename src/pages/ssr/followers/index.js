@@ -6,7 +6,8 @@ export default function FollowersSSR({ followers }) {
 }
 
 export async function getServerSideProps() {
-  const followers = await getFollowers();
+  const authHeaders = getAuthHeaders();
+  const followers = await getFollowers(authHeaders);
   return {
     props: {
       followers
