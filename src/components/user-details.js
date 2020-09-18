@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export function UserDetails({ user }) {
   const router = useRouter();

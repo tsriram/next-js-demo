@@ -4,7 +4,7 @@ export function Layout({ children }) {
   return (
     <div className="p-8 bg-gray-800 min-h-screen min-w-screen text-white">
       <Head>
-        <title>GitHub Followers</title>
+        <title>Next.js Demo - GitHub Followers</title>
       </Head>
 
       <div>{children}</div>

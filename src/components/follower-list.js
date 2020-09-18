@@ -1,4 +1,4 @@
-import { FollowerCard } from "./Follower";
+import { FollowerCard } from "@/components/follower";
 import Link from "next/link";
 
 export function FollowerList({ followers, renderType }) {
