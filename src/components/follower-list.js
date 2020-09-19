@@ -9,7 +9,7 @@ export function FollowerList({ followers, renderType }) {
           <Link href="/">
             <a className="">Home</a>
           </Link>
-          <h1 className="text-3xl text-white m-auto">Followers</h1>
+          <h1 className="text-3xl text-white m-auto">GitHub Followers</h1>
         </div>
       </div>
       <div className="lg:container lg:mx-auto grid grid-cols-4 gap-4">
